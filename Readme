@@ -1,0 +1,8 @@
+FROM node:16 - Node.js версии 16
+WORKDIR /app - рабочая директорию
+COPY package*.json - копируем файлы зависимостей
+RUN npm install - устанавливаем зависимости
+COPY . . - копируем весь код приложения
+RUN npm run build - собираем Reac
+EXPOSE 3000 - открываем порт 3000 согласно файла app.js
+CMD ["npm", "start"] - запускаем Node.js
